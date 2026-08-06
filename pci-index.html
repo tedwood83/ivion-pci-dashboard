@@ -1,1 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centralized Digital Site Desk - PCI</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; padding: 20px; background: #f4f6f9; color: #333; margin: 0; }
+        .dashboard-container { max-width: 650px; margin: auto; background: #ffffff; padding: 25px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        h2 { margin-top: 0; color: #003366; font-size: 22px; border-bottom: 2px solid #003366; padding-bottom: 8px; }
+        .section-title { font-size: 14px; text-transform: uppercase; color: #6c757d; margin: 20px 0 10px 0; font-weight: bold; letter-spacing: 0.5px; }
+        .grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+        .card-link { display: flex; align-items: center; justify-content: space-between; background: #f8f9fa; border: 1px solid #e9ecef; padding: 12px 15px; border-radius: 6px; text-decoration: none; color: #333; transition: all 0.2s ease; }
+        .card-link:hover { background: #e2e8f0; border-color: #cbd5e1; color: #003366; transform: translateY(-1px); }
+        .card-link span { font-weight: 600; font-size: 14px; }
+        .badge { background: #003366; color: white; font-size: 11px; padding: 3px 8px; border-radius: 4px; }
+        .footer-note { font-size: 11px; color: #888; text-align: center; margin-top: 25px; border-top: 1px solid #eee; padding-top: 10px; }
+    </style>
+</head>
+<body>
 
+<div class="dashboard-container">
+    <h2>Pre-Construction Information (PCI) Portal</h2>
+    <p style="font-size: 13px; color: #555;">Master document directory and live site feeds. Always up-to-date.</p>
+
+    <!-- H&S and Induction Section -->
+    <div class="section-title">Health & Safety / Inductions</div>
+    <div class="grid">
+        <a href="induction.html" target="_blank" class="card-link">
+            <span>Site Induction & H&S Briefing</span>
+            <span class="badge">Interactive</span>
+        </a>
+    </div>
+
+    <!-- Engineering & Ground Investigation -->
+    <div class="section-title">Engineering & Ground Data</div>
+    <div class="grid">
+        <a href="reports/gi-report.pdf" target="_blank" class="card-link">
+            <span>Ground Investigation (GI) Report</span>
+            <span class="badge">PDF</span>
+        </a>
+        <a href="utilities/index.html" target="_blank" class="card-link">
+            <span>Dynamic Utility Constraints & Services Map</span>
+            <span class="badge">Web Map</span>
+        </a>
+    </div>
+
+    <!-- Management Plans -->
+    <div class="section-title">Site Management Plans</div>
+    <div class="grid">
+        <a href="plans/traffic-mgmt.pdf" target="_blank" class="card-link">
+            <span>Traffic Management Plan</span>
+            <span class="badge">PDF</span>
+        </a>
+        <a href="plans/ecology-strategy.pdf" target="_blank" class="card-link">
+            <span>Ecological Mitigation Strategy</span>
+            <span class="badge">PDF</span>
+        </a>
+    </div>
+
+    <div class="footer-note">Central Site Desk &bull; Managed via GitHub &amp; NavVis IVION</div>
+</div>
+
+</body>
+</html>
