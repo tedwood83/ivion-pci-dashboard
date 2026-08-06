@@ -76,7 +76,7 @@
                 <label for="agree" style="font-weight: normal; display: inline;">I confirm that I have read, understood, and agree to abide by all site rules, safety guidelines, and environmental constraints outlined in this briefing.</label>
             </div>
             <button type="submit">Confirm & Submit Induction</button>
-        </form>
+        <form id="signoff-form" action="https://formspree.io/f/xgawedge" method="POST" onsubmit="handleSubmittal(event)">
         <div id="success-box" class="success-msg">
             Induction Acknowledged Successfully! Safe to proceed on-site.
         </div>
