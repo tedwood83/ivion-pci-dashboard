@@ -31,7 +31,7 @@
 
 <div class="container" id="induction-card">
     <h2>Interactive Site Safety Induction</h2>
-    <p style="font-size: 13px; color: #555;">Review the modules below, then complete the digital sign-off at the bottom.</p>
+    <p style="font-size: 13px; color: #555;">Review the modules and virtual tour below, then complete the digital sign-off.</p>
 
     <!-- Interactive Collapsible Modules -->
     <details open>
@@ -60,6 +60,31 @@
         </div>
     </details>
 
+    <!-- NEW: Virtual Site Tour & Hazard Walkthrough Section -->
+    <details>
+        <summary>4. Virtual Site Tour & Hazard Walkthrough</summary>
+        <p style="font-size: 14px; color: #555; margin-top: 10px;">
+            Click through the critical site stops below to inspect active conditions in the 3D digital twin before completing your sign-off:
+        </p>
+        <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 12px;">
+            <a href="https://bridges.iv.navvis.com/?site=684107349573132&vlon=0.35&vlat=-0.27&fov=150.0&poi=3325487281145989" target="_blank" style="background: #f1f5f9; padding: 10px 12px; border-radius: 6px; text-decoration: none; color: #1e293b; font-size: 14px; font-weight: 600; border: 1px solid #cbd5e1; display: flex; justify-content: space-between; align-items: center;">
+                <span>📍 Stop 1: Main Pedestrian Gate & Walkway</span>
+                <span style="font-size: 12px; color: #b91c1c;">View in 3D &rarr;</span>
+            </a>
+            <a href="https://bridges.iv.navvis.com/?site=684107349573132&vlon=-0.08&vlat=-0.52&fov=150.0&poi=219887498058854" target="_blank" style="background: #f1f5f9; padding: 10px 12px; border-radius: 6px; text-decoration: none; color: #1e293b; font-size: 14px; font-weight: 600; border: 1px solid #cbd5e1; display: flex; justify-content: space-between; align-items: center;">
+                <span>⚠️ Stop 2: Active Excavation & Utility Buffer</span>
+                <span style="font-size: 12px; color: #b91c1c;">View in 3D &rarr;</span>
+            </a>
+            <a href="https://bridges.iv.navvis.com/?site=684107349573132&vlon=2.60&vlat=-0.60&fov=150.0&poi=2516288325362965" target="_blank" style="background: #f1f5f9; padding: 10px 12px; border-radius: 6px; text-decoration: none; color: #1e293b; font-size: 14px; font-weight: 600; border: 1px solid #cbd5e1; display: flex; justify-content: space-between; align-items: center;">
+                <span>🚨 Stop 3: Emergency Muster Point</span>
+                <span style="font-size: 12px; color: #b91c1c;">View in 3D &rarr;</span>
+            </a>
+        </div>
+        <p style="font-size: 13px; font-style: italic; color: #64748b; margin-top: 12px;">
+            *Inspect all stops above, then scroll down to complete your digital sign-off.*
+        </p>
+    </details>
+
     <!-- Digital Sign-off Form -->
     <div class="form-section">
         <h3>Site Induction Acknowledgment</h3>
@@ -74,7 +99,7 @@
             </div>
             <div class="checkbox-group">
                 <input type="checkbox" id="agree" required style="margin-top: 2px;">
-                <label for="agree" style="font-weight: normal; display: inline;">I confirm that I have read, understood, and agree to abide by all site rules, safety guidelines, and environmental constraints outlined in this briefing.</label>
+                <label for="agree" style="font-weight: normal; display: inline;">I confirm that I have reviewed the site safety guidelines and virtual tour stops, and agree to abide by all rules outlined.</label>
             </div>
             <button type="submit" id="submit-btn">Confirm & Submit Induction</button>
         </form>
