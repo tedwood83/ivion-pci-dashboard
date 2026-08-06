@@ -3,41 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site Induction & H&S Briefing</title>
+    <title>Interactive Site Safety Induction</title>
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; padding: 20px; background: #f8f9fa; color: #333; margin: 0; }
         .container { max-width: 650px; margin: auto; background: #ffffff; padding: 25px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
         h2 { margin-top: 0; color: #b91c1c; font-size: 22px; border-bottom: 2px solid #b91c1c; padding-bottom: 8px; }
-        .section-title { font-size: 14px; text-transform: uppercase; color: #6c757d; margin: 20px 0 10px 0; font-weight: bold; }
-        ul { padding-left: 20px; font-size: 14px; line-height: 1.6; }
-        li { margin-bottom: 8px; }
+        details { background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 6px; margin-bottom: 12px; padding: 12px 15px; transition: background 0.2s; }
+        details[open] { background: #fff; border-color: #cbd5e1; box-shadow: 0 2px 4px rgba(0,0,0,0.03); }
+        summary { font-weight: bold; cursor: pointer; color: #1e293b; font-size: 15px; outline: none; }
+        summary:hover { color: #b91c1c; }
+        ul { padding-left: 20px; font-size: 14px; line-height: 1.6; margin-top: 10px; }
+        li { margin-bottom: 6px; }
         .emergency-box { background: #fef2f2; border: 1px solid #fecaca; padding: 15px; border-radius: 6px; font-size: 14px; color: #991b1b; margin-top: 20px; }
+        .form-section { margin-top: 25px; background: #f1f5f9; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; }
+        .form-section h3 { margin-top: 0; font-size: 16px; color: #0f172a; }
+        .form-group { margin-bottom: 12px; }
+        label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 4px; color: #475569; }
+        input[type="text"], input[type="date"] { width: 100%; padding: 8px 10px; box-sizing: border-box; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 14px; }
+        .checkbox-group { display: flex; align-items: flex-start; gap: 8px; margin-top: 15px; font-size: 13px; color: #334155; }
+        button { background: #b91c1c; color: white; border: none; padding: 10px 15px; font-size: 14px; font-weight: bold; border-radius: 4px; cursor: pointer; width: 100%; margin-top: 15px; }
+        button:hover { background: #991b1b; }
+        .success-msg { display: none; background: #d1fae5; color: #065f46; padding: 15px; border-radius: 6px; text-align: center; font-weight: bold; margin-top: 15px; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h2>Mandatory Site Safety Induction</h2>
-    <p style="font-size: 13px; color: #555;">Complete this brief prior to entering active work zones.</p>
+<div class="container" id="induction-card">
+    <h2>Interactive Site Safety Induction</h2>
+    <p style="font-size: 13px; color: #555;">Review the modules below, then complete the digital sign-off at the bottom.</p>
 
-    <div class="section-title">1. Core Site Rules</div>
-    <ul>
-        <li>Full PPE (Hard hat, high-vis, safety boots, glasses) required at all times beyond the gate.</li>
-        <li>Sign in digitally or at the main site office before commencing any work.</li>
-        <li>Report all near-misses and incidents immediately to the Site Manager.</li>
-    </ul>
+    <!-- Interactive Collapsible Modules -->
+    <details open>
+        <summary>1. Core Site Rules & PPE</summary>
+        <ul>
+            <li>Full PPE (Hard hat, high-vis, safety boots, glasses) required at all times beyond the gate.</li>
+            <li>Sign in digitally or at the main site office before commencing any work.</li>
+            <li>Report all near-misses and incidents immediately to the Site Manager.</li>
+        </ul>
+    </details>
 
-    <div class="section-title">2. Environmental & Access Constraints</div>
-    <ul>
-        <li>Strict 10mph speed limit across the entire site footprint.</li>
-        <li>No unauthorized entry into excavation or utility buffer zones.</li>
-    </ul>
+    <details>
+        <summary>2. Environmental & Access Constraints</summary>
+        <ul>
+            <li>Strict 10mph speed limit across the entire site footprint.</li>
+            <li>No unauthorized entry into excavation or utility buffer zones.</li>
+            <li>Keep designated run-off and drainage pathways clear at all times.</li>
+        </ul>
+    </details>
 
-    <div class="emergency-box">
-        <strong>Emergency Procedure & Muster Point:</strong><br>
-        In the event of an alarm or site evacuation, immediately drop tools and report to the **Main Gate Compound Muster Point**. Do not re-enter until an all-clear is given.
+    <details>
+        <summary>3. Emergency Procedures & Muster Points</summary>
+        <div class="emergency-box" style="margin-top: 10px; margin-bottom: 0;">
+            <strong>Muster Point:</strong> Main Gate Compound.<br>
+            In the event of an alarm, drop tools immediately and proceed via the designated walkways to the muster point. Do not leave site until a roll call is complete.
+        </div>
+    </details>
+
+    <!-- Digital Sign-off Form -->
+    <div class="form-section">
+        <h3>Site Induction Acknowledgment</h3>
+        <form id="signoff-form" onsubmit="handleSubmittal(event)">
+            <div class="form-group">
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" required placeholder="e.g. John Smith">
+            </div>
+            <div class="form-group">
+                <label for="company">Company / Subcontractor:</label>
+                <input type="text" id="company" required placeholder="e.g. Apex Civil Engineering">
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="agree" required style="margin-top: 2px;">
+                <label for="agree" style="font-weight: normal; display: inline;">I confirm that I have read, understood, and agree to abide by all site rules, safety guidelines, and environmental constraints outlined in this briefing.</label>
+            </div>
+            <button type="submit">Confirm & Submit Induction</button>
+        </form>
+        <div id="success-box" class="success-msg">
+            Induction Acknowledged Successfully! Safe to proceed on-site.
+        </div>
     </div>
 </div>
+
+<script>
+    function handleSubmittal(event) {
+        event.preventDefault(); // Prevents page reload
+        document.getElementById('signoff-form').style.display = 'none';
+        document.getElementById('success-box').style.display = 'block';
+    }
+</script>
 
 </body>
 </html>
