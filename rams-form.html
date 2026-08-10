@@ -1,1 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RAMS Hazard Assessment</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; max-width: 400px; background: #f9f9f9; }
+        .section { margin-bottom: 15px; background: white; padding: 15px; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        select, input[type="number"] { width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box; }
+        .checkbox-group label { font-weight: normal; margin-bottom: 8px; }
+        button { background: #28a745; color: white; padding: 12px; width: 100%; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; }
+        button:hover { background: #218838; }
+    </style>
+</head>
+<body>
+    <h3>Site RAMS Assessment</h3>
+    <form>
+        <div class="section">
+            <label>Hazard Type:</label>
+            <select>
+                <option>Trip Hazard</option>
+                <option>Unprotected Edge</option>
+                <option>Electrical Risk</option>
+                <option>Falling Object</option>
+            </select>
+        </div>
 
+        <div class="section">
+            <label>Likelihood (1-5):</label>
+            <input type="number" min="1" max="5" value="1">
+        </div>
+
+        <div class="section">
+            <label>Severity (1-5):</label>
+            <input type="number" min="1" max="5" value="1">
+        </div>
+
+        <div class="section checkbox-group">
+            <label><input type="checkbox"> Barrier Required</label>
+            <label><input type="checkbox"> Permit to Work Needed</label>
+            <label><input type="checkbox"> Toolbox Talk Required</label>
+        </div>
+
+        <button type="button" onclick="alert('RAMS Assessment logged successfully!')">Save Assessment</button>
+    </form>
+</body>
+</html>
